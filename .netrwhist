@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/catalin/Code/otb/otb_admin_app'
+let g:netrw_dirhist_6='/Users/catalin/Code/otb/otb_api_app/master'
+let g:netrw_dirhist_5='/Users/catalin/Code/otb/otb_admin_app'
+let g:netrw_dirhist_4='/Users/catalin/Code/otb/otb_api_app/master/app/controllers'
+let g:netrw_dirhist_3='/Users/catalin/Code/otb/otb_api_app/master/app/controllers/v2'
+let g:netrw_dirhist_2='/Users/catalin/Code/otb/otb_api_app/master/app/controllers'
+let g:netrw_dirhist_1='/Users/catalin/Code/otb/otb_api_app/master/app/controllers/v1'
+let g:netrw_dirhist_0='/Users/catalin/Code/otb/otb_api_app/master/app/controllers/v1/searches'
+let g:netrw_dirhist_9='/Users/catalin/Code/otb/otb_api_app/master/app/controllers/v1'
+let g:netrw_dirhist_8='/Users/catalin/Code/otb/otb_api_app/master/app/controllers'
