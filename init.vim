@@ -83,6 +83,8 @@ if has('nvim')
 	Plug 'antoinemadec/FixCursorHold.nvim'
 endif
 
+Plug 'ThePrimeagen/harpoon'
+
 call plug#end()
 
 
@@ -211,3 +213,17 @@ let g:LanguageClient_serverCommands = {
 nmap <silent>K <Plug>(lcn-hover)
 nmap <silent> gd <Plug>(lcn-definition)
 nmap <silent> gc <Plug>(lcn-references)
+
+" Harpoon maps
+nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
+nnoremap <C-e> :lua require("harpoon.ui").toggle_quick_menu()<CR>
+
+nnoremap <leader>1 :lua require("harpoon.ui").nav_file(1)<CR>
+nnoremap <leader>2 :lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <leader>3 :lua require("harpoon.ui").nav_file(3)<CR>
+nnoremap <leader>4 :lua require("harpoon.ui").nav_file(4)<CR>
+nnoremap <leader>5 :lua require("harpoon.ui").nav_file(5)<CR>
+nnoremap <leader>6 :lua require("harpoon.ui").nav_file(6)<CR>
+nnoremap <leader>7 :lua require("harpoon.ui").nav_file(7)<CR>
+nnoremap <leader>8 :lua require("harpoon.ui").nav_file(8)<CR>
+nnoremap <leader>9 :lua require("harpoon.ui").nav_file(9)<CR>
