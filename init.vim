@@ -189,7 +189,6 @@ endif
 let test#ruby#runner = 'rspec'
 
 " Telescope
-
 nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
 nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>
 nnoremap <leader>bf <cmd>lua require('telescope.builtin').buffers()<cr>
