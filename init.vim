@@ -46,11 +46,13 @@ call plug#begin('~/.vim/plugged')
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'dense-analysis/ale'
 
 Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+      \ 'branch': 'next',
+      \ 'do': 'bash install.sh',
+      \ }
 
 " (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf'
@@ -71,6 +73,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'stsewd/fzf-checkout.vim'
+
 Plug 'vimwiki/vimwiki'
 
 Plug 'vim-test/vim-test'
@@ -80,26 +83,31 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "C++ compliler
 Plug 'cdelledonne/vim-cmake'
 if has('nvim')
-	Plug 'antoinemadec/FixCursorHold.nvim'
+  Plug 'antoinemadec/FixCursorHold.nvim'
 endif
 
 Plug 'ThePrimeagen/harpoon'
+
+Plug 'puremourning/vimspector'
 
 call plug#end()
 
 
 " Vim Wiki settings
 let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
+      \ 'syntax': 'markdown', 'ext': '.md'}]
 " Setup gruvbox
 colorscheme gruvbox
 highlight Normal guibg=none
 
 " Remap
 let mapleader=" "
-let g:netrw_browse_split = 2
+" Netrw - file tree
+let g:netrw_browse_split = 4
 let g:netrw_banner = 0
-let g:netrw_winsize = 25
+let g:netrw_preview = 1
+let g:netrw_liststyle = 3
+let g:netrw_altv = 1
 
 " Quality of life remaps
 " Behave vim
@@ -172,9 +180,9 @@ nnoremap <silent> <Leader>] :exe "resize " . (winheight(0) * 2/3)<CR>
 "
 " Telescope lua functions
 lua << EOF
-  require('telescope').setup {
+require('telescope').setup {
   }
-  require('telescope').load_extension('fzf')
+require('telescope').load_extension('fzf')
 EOF
 
 
@@ -210,9 +218,15 @@ let g:LanguageClient_serverCommands = {
     \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio']
     \ }
 
+let g:ale_linters = {
+\ 'cs': ['OmniSharp']
+\}
+
 nmap <silent>K <Plug>(lcn-hover)
 nmap <silent> gd <Plug>(lcn-definition)
 nmap <silent> gc <Plug>(lcn-references)
+
+autocmd FileType cs nmap <silent> <buffer> gd <Plug>(omnisharp_go_to_definition)
 
 " Harpoon maps
 nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
@@ -227,3 +241,6 @@ nnoremap <leader>6 :lua require("harpoon.ui").nav_file(6)<CR>
 nnoremap <leader>7 :lua require("harpoon.ui").nav_file(7)<CR>
 nnoremap <leader>8 :lua require("harpoon.ui").nav_file(8)<CR>
 nnoremap <leader>9 :lua require("harpoon.ui").nav_file(9)<CR>
+
+" Vimspector
+let g:vimspector_enable_mappings = 'HUMAN'
