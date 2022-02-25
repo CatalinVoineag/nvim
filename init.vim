@@ -46,7 +46,6 @@ call plug#begin('~/.vim/plugged')
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
-
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'dense-analysis/ale'
 
@@ -74,10 +73,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'stsewd/fzf-checkout.vim'
-<<<<<<< HEAD
-=======
 
->>>>>>> 9bd91a0256d475d50c9494863360ff7bd7b2bf33
 Plug 'vimwiki/vimwiki'
 
 Plug 'vim-test/vim-test'
@@ -87,11 +83,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "C++ compliler
 Plug 'cdelledonne/vim-cmake'
 if has('nvim')
-<<<<<<< HEAD
-	Plug 'antoinemadec/FixCursorHold.nvim'
-endif
-
-=======
   Plug 'antoinemadec/FixCursorHold.nvim'
 endif
 
@@ -99,35 +90,24 @@ Plug 'ThePrimeagen/harpoon'
 
 Plug 'puremourning/vimspector'
 
->>>>>>> 9bd91a0256d475d50c9494863360ff7bd7b2bf33
 call plug#end()
 
 
 " Vim Wiki settings
 let g:vimwiki_list = [{'path': '~/vimwiki/',
-<<<<<<< HEAD
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
-=======
       \ 'syntax': 'markdown', 'ext': '.md'}]
->>>>>>> 9bd91a0256d475d50c9494863360ff7bd7b2bf33
 " Setup gruvbox
 colorscheme gruvbox
 highlight Normal guibg=none
 
 " Remap
 let mapleader=" "
-<<<<<<< HEAD
-let g:netrw_browse_split = 2
-let g:netrw_banner = 0
-let g:netrw_winsize = 25
-=======
 " Netrw - file tree
 let g:netrw_browse_split = 4
 let g:netrw_banner = 0
 let g:netrw_preview = 1
 let g:netrw_liststyle = 3
 let g:netrw_altv = 1
->>>>>>> 9bd91a0256d475d50c9494863360ff7bd7b2bf33
 
 " Quality of life remaps
 " Behave vim
@@ -199,9 +179,9 @@ nnoremap <silent> <Leader>] :exe "resize " . (winheight(0) * 2/3)<CR>
 "
 " Telescope lua functions
 lua << EOF
-  require('telescope').setup {
+require('telescope').setup {
   }
-  require('telescope').load_extension('fzf')
+require('telescope').load_extension('fzf')
 EOF
 
 
